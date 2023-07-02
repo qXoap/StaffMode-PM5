@@ -37,10 +37,7 @@ class ChatCommand extends Command {
             return;
         }
 
-        if (SessionFactory::isChat($player)) {
-            SessionFactory::cancelChat($player);
-            $player->sendMessage(Prefixes::PLUGIN . "You have exited the StaffChat");
-            return;
-        }
+        SessionFactory::cancelChat($player);
+        $player->sendMessage(Prefixes::PLUGIN . "You have exited the StaffChat");
     }
 }

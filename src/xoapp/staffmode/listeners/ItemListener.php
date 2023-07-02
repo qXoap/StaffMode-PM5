@@ -138,14 +138,9 @@ class ItemListener implements Listener {
                 return;
             }
 
-            if (SessionFactory::isFreeze($victim)) {
-                SessionFactory::cancelFreeze($victim);
-                SessionUtils::broadcastMessage(Prefixes::FREEZE . "Player §a" . $victim->getName() . " §7Was thawed by §e" . $player->getName());
-                $victim->getEffects()->clear();
-                $event->cancel();
-                return;
-            }
-
+            SessionFactory::cancelFreeze($victim);
+            SessionUtils::broadcastMessage(Prefixes::FREEZE . "Player §a" . $victim->getName() . " §7Was thawed by §e" . $player->getName());
+            $victim->getEffects()->clear();
             $event->cancel();
             return;
         }

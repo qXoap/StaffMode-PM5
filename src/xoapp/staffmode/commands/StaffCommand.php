@@ -42,15 +42,12 @@ class StaffCommand extends Command {
             return;
         }
 
-        if (SessionFactory::isRegistered($player)) {
-            SessionFactory::unregister($player);
-            SessionFactory::cancelVanish($player);
-            $player->setAllowFlight(false);
-            $player->setFlying(false);
-            $player->setGamemode(GameMode::SURVIVAL());
-            $player->getEffects()->clear();
-            $player->sendMessage(Prefixes::PLUGIN . "You have exited the StaffMode");
-            return;
-        }
+        SessionFactory::unregister($player);
+        SessionFactory::cancelVanish($player);
+        $player->setAllowFlight(false);
+        $player->setFlying(false);
+        $player->setGamemode(GameMode::SURVIVAL());
+        $player->getEffects()->clear();
+        $player->sendMessage(Prefixes::PLUGIN . "You have exited the StaffMode");
     }
 }
