@@ -13,6 +13,7 @@ class Vanish extends Dye {
     public function __construct()
     {
         parent::__construct(new ItemIdentifier(ItemTypeIds::DYE), ItemNames::VANISH);
-        $this->setColor(DyeColor::GREEN());
+        $this->setCustomName(ItemNames::VANISH);
+        $this->setColor(DyeColor::LIME());
     }
 }

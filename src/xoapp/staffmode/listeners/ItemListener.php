@@ -1,6 +1,6 @@
 <?php
 
-namespace xoapp\security\listeners;
+namespace xoapp\staffmode\listeners;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
@@ -44,7 +44,6 @@ class ItemListener implements Listener {
             SessionFactory::sendVanish($player);
             $player->sendMessage(Prefixes::PLUGIN . "You have entered in Vanish Mode");
             $player->getInventory()->setItem(4, new UnVanish());
-            $player->setAllowFlight(true);
             foreach (SessionUtils::getPlayers() as $players) {
                 if (SessionFactory::isVanish($players)) {
                     $player->showPlayer($players);
@@ -63,8 +62,6 @@ class ItemListener implements Listener {
 
             SessionFactory::cancelVanish($player);
             $player->sendMessage(Prefixes::PLUGIN . "You have exited Vanish Mode");
-            $player->setAllowFlight(false);
-            $player->setFlying(false);
             $player->getInventory()->setItem(4, new Vanish());
             $player->getEffects()->clear();
             foreach (SessionUtils::getPlayers() as $players) {

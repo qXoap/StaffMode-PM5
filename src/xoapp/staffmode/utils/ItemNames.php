@@ -8,7 +8,7 @@ class ItemNames {
 
     const RANDOM_TELEPORT = "§aRandom Teleport";
 
-    const FREEZE = "§abFreeze";
+    const FREEZE = "§bFreeze";
 
     const VANISH = "§aVanish";
 

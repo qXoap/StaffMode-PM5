@@ -1,6 +1,6 @@
 <?php
 
-namespace xoapp\security\listeners;
+namespace xoapp\staffmode\listeners;
 
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
@@ -57,6 +57,7 @@ class StaffListener implements Listener
             $player->setSilent(false);
             SessionFactory::cancelVanish($player);
             SessionFactory::unregister($player);
+            $player->getEffects()->clear();
             foreach (Server::getInstance()->getOnlinePlayers() as $players) {
                 $players->showPlayer($player);
             }
@@ -108,6 +109,7 @@ class StaffListener implements Listener
             $player->setAllowFlight(false);
             SessionFactory::unregister($player);
             SessionFactory::cancelVanish($player);
+            $player->getEffects()->clear();
             foreach (Server::getInstance()->getOnlinePlayers() as $onlinePlayer) {
                 $onlinePlayer->showPlayer($player);
             }

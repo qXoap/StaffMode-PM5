@@ -4,6 +4,7 @@ namespace xoapp\staffmode\commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 use xoapp\staffmode\session\SessionFactory;
 use xoapp\staffmode\utils\Permissions;
@@ -34,14 +35,20 @@ class StaffCommand extends Command {
         if (!SessionFactory::isRegistered($player)) {
             $player->setAllowFlight(true);
             SessionFactory::register($player);
+            $player->setGamemode(GameMode::SURVIVAL());
+            $player->setHealth($player->getMaxHealth());
+            $player->getHungerManager()->setFood($player->getHungerManager()->getMaxFood());
             $player->sendMessage(Prefixes::PLUGIN . "You have entered in StaffMode");
             return;
         }
 
         if (SessionFactory::isRegistered($player)) {
             SessionFactory::unregister($player);
+            SessionFactory::cancelVanish($player);
             $player->setAllowFlight(false);
             $player->setFlying(false);
+            $player->setGamemode(GameMode::SURVIVAL());
+            $player->getEffects()->clear();
             $player->sendMessage(Prefixes::PLUGIN . "You have exited the StaffMode");
             return;
         }
