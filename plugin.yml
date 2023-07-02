@@ -1,0 +1,13 @@
+name: UltimateStaff
+main: xoapp\staffmode\Loader
+api: 5.0.0
+version: 1.0.0
+author: Xoapp
+
+permissions:
+  ultimatestaff.command:
+    default: op
+  ultimatestaff.command.chat:
+    default: op
+  ultimatestaff.command.freeze:
+    default: op
