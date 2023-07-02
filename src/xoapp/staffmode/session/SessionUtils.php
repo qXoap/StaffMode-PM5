@@ -33,7 +33,7 @@ class SessionUtils {
         ]);
     }
 
-    public static function broadcastMessage(string|Translatable $message): string
+    public static function broadcastMessage(string|Translatable $message): int
     {
         return Server::getInstance()->broadcastMessage($message);
     }
