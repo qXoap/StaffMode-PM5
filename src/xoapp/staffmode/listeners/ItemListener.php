@@ -21,7 +21,7 @@ use xoapp\staffmode\utils\Prefixes;
 
 class ItemListener implements Listener {
 
-    public function onItemUse(PlayerItemUseEvent $event)
+    public function onItemUse(PlayerItemUseEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -110,7 +110,7 @@ class ItemListener implements Listener {
         }
     }
 
-    public function onPlayerHit(EntityDamageByEntityEvent $event)
+    public function onPlayerHit(EntityDamageByEntityEvent $event): void
     {
         $victim = $event->getEntity();
         $player = $event->getDamager();

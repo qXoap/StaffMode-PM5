@@ -45,7 +45,7 @@ class TeleportMenu extends SimpleForm {
         });
         $this->setTitle("Player List");
         foreach (SessionUtils::getPlayers() as $player) {
-            $this->addButton($player->getName() . "\nTap To Teleport", 0, "textures/ui/icon_steve", $player->getName());
+            $this->addButton($player->getName() . PHP_EOL . "Tap To Teleport", 0, "textures/ui/icon_steve", $player->getName());
         }
         $this->addButton("Close", 0, "textures/ui/redX1", "close");
     }

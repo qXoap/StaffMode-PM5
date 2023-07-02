@@ -29,7 +29,7 @@ use xoapp\staffmode\utils\Prefixes;
 class StaffListener implements Listener
 {
 
-    public function onPlayerJoin(PlayerJoinEvent $event)
+    public function onPlayerJoin(PlayerJoinEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -40,7 +40,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onQuit(PlayerQuitEvent $event)
+    public function onQuit(PlayerQuitEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -64,7 +64,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onExhaust(PlayerExhaustEvent $event)
+    public function onExhaust(PlayerExhaustEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -75,7 +75,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onDeath(PlayerDeathEvent $event)
+    public function onDeath(PlayerDeathEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -85,7 +85,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onRespawn(PlayerRespawnEvent $event)
+    public function onRespawn(PlayerRespawnEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -95,7 +95,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onKick(PlayerKickEvent $event)
+    public function onKick(PlayerKickEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -116,7 +116,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onDrop(PlayerDropItemEvent $event)
+    public function onDrop(PlayerDropItemEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -126,7 +126,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onInteract(PlayerInteractEvent $event)
+    public function onInteract(PlayerInteractEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -136,7 +136,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onBreak(BlockBreakEvent $event)
+    public function onBreak(BlockBreakEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -146,7 +146,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onPlace(BlockPlaceEvent $event)
+    public function onPlace(BlockPlaceEvent $event): void
     {
         $player = $event->getPlayer();
 
@@ -156,7 +156,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onDamage(EntityDamageEvent $event)
+    public function onDamage(EntityDamageEvent $event): void
     {
         $entity = $event->getEntity();
 
@@ -173,7 +173,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onDamageByEntity(EntityDamageByEntityEvent $event)
+    public function onDamageByEntity(EntityDamageByEntityEvent $event): void
     {
         $entity = $event->getDamager();
 
@@ -184,7 +184,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onPickup(EntityItemPickupEvent $event)
+    public function onPickup(EntityItemPickupEvent $event): void
     {
         $entity = $event->getEntity();
         if ($entity instanceof Player) {
@@ -194,7 +194,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onCombust(EntityCombustEvent $event)
+    public function onCombust(EntityCombustEvent $event): void
     {
         $entity = $event->getEntity();
         if ($entity instanceof Player) {
@@ -204,7 +204,7 @@ class StaffListener implements Listener
         }
     }
 
-    public function onCommand(CommandEvent $event)
+    public function onCommand(CommandEvent $event): void
     {
         $player = $event->getSender();
 
