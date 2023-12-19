@@ -11,4 +11,3 @@
 - UnVanish
 - Teleport
 - Random Teleport
-- Xd
